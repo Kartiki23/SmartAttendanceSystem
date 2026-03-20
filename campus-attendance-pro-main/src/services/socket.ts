@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:5172", {
+const socket = io("https://smartattendancesystem-2-esaj.onrender.com", {
     transports:["websocket"],
   withCredentials: true
 });
