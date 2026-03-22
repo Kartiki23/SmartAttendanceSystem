@@ -23,6 +23,7 @@ import {
   FileSpreadsheet,
 } from "lucide-react";
 import { Button } from "./ui/button";
+import NotificationBell from "./NotificationBell";
 
 interface DashboardLayoutProps {
   children: ReactNode;
@@ -53,10 +54,10 @@ const roleConfig = {
     links: [
       { href: "/faculty", label: "Dashboard", icon: LayoutDashboard },
       { href: "/faculty/sessions", label: "Sessions", icon: Calendar },
-      { href: "/faculty/qr", label: "Generate QR", icon: QrCode },
+      { href: "/generate-qr", label: "Generate QR", icon: QrCode },
       { href: "/faculty/attendance", label: "Attendance", icon: ClipboardList },
       { href: "/faculty/reports", label: "Reports", icon: BarChart3 },
-      { href: "/faculty/profile", label: "Profile", icon: User },
+      { href: "/my-profile", label: "Profile", icon: User },
     ],
   },
   student: {
@@ -66,10 +67,10 @@ const roleConfig = {
     bg: "bg-student-muted",
     links: [
       { href: "/student", label: "Dashboard", icon: LayoutDashboard },
-      { href: "/student/scan", label: "Scan QR", icon: QrCode },
-      { href: "/student/attendance", label: "My Attendance", icon: ClipboardList },
-      { href: "/student/subjects", label: "Subjects", icon: BookOpen },
-      { href: "/student/profile", label: "Profile", icon: User },
+      { href: "/scan", label: "Scan QR", icon: QrCode },
+      { href: "/my-student-attendance", label: "My Attendance", icon: ClipboardList },
+      { href: "/student-performance", label: "Subjects", icon: BookOpen },
+      { href: "/my-profile", label: "Profile", icon: User },
     ],
   },
   parent: {
@@ -82,7 +83,7 @@ const roleConfig = {
       { href: "/parent/attendance", label: "Attendance", icon: ClipboardList },
       { href: "/parent/trends", label: "Trends", icon: TrendingUp },
       { href: "/parent/reports", label: "Reports", icon: BarChart3 },
-      { href: "/parent/profile", label: "Profile", icon: User },
+      { href: "/my-profile", label: "Profile", icon: User },
     ],
   },
 };
@@ -211,12 +212,14 @@ export function DashboardLayout({ children, role, userName = "User" }: Dashboard
 
             <div className="flex items-center gap-4">
               <button className="relative p-2 hover:bg-accent rounded-lg">
-                <Bell className="w-5 h-5" />
+                <NotificationBell/>
                 <span className="absolute top-1 right-1 w-2 h-2 bg-destructive rounded-full" />
               </button>
-              <div className={cn("w-9 h-9 rounded-full flex items-center justify-center", config.gradient)}>
+              <Button onClick={() =>navigate('/my-profile')}>
+              <div className={cn( config.gradient)}>
                 <User className="w-5 h-5 text-white" />
               </div>
+              </Button>
             </div>
           </div>
         </header>

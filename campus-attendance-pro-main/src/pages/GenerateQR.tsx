@@ -4,6 +4,7 @@ import { CollegeHeader } from "@/components/CollegeHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import api from "@/services/api";
+import { DashboardLayout } from "@/components/DashboardLayout";
 
 export default function GenerateQR() {
 
@@ -101,6 +102,7 @@ export default function GenerateQR() {
     <div className="min-h-screen bg-background">
 
       <CollegeHeader />
+      <DashboardLayout role="faculty">
 
       <div className="container mx-auto px-4 py-8 max-w-lg">
 
@@ -164,7 +166,7 @@ export default function GenerateQR() {
         </motion.div>
 
       </div>
-
+     </DashboardLayout>
     </div>
   );
 }

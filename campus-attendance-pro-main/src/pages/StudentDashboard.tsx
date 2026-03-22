@@ -28,6 +28,7 @@ import {
   CardTitle
 } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
+import { DashboardLayout } from "@/components/DashboardLayout";
 
 export default function StudentDashboard() {
   const { user } = useAuth();
@@ -83,7 +84,6 @@ export default function StudentDashboard() {
   return (
     <div className="min-h-screen bg-background">
       <CollegeHeader />
-
       <div className="container mx-auto px-4 py-8">
 
         {/* HEADER */}
@@ -106,7 +106,7 @@ export default function StudentDashboard() {
           </div>
 
           {/* 🔔 Notification Bell */}
-          <NotificationBell />
+          {/* <NotificationBell /> */}
         </motion.div>
 
 

@@ -31,6 +31,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useNavigate } from "react-router-dom";
 import api from "@/services/api";
+import { DashboardLayout } from "@/components/DashboardLayout";
 
 interface FacultyClass {
   _id: string;
@@ -299,6 +300,7 @@ export default function FacultyDashboard() {
   return (
     <div className="min-h-screen bg-background">
       <CollegeHeader />
+      <DashboardLayout role="faculty">
 
       <div className="container mx-auto px-4 py-8">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
@@ -551,6 +553,7 @@ export default function FacultyDashboard() {
           </TabsContent>
         </Tabs>
       </div>
+      </DashboardLayout>
     </div>
   );
 }

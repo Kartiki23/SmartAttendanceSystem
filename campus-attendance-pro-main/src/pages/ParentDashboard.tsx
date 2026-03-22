@@ -18,6 +18,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import api from "@/services/api";
 import { SubjectStats } from "@/components/SubjectStats";
 import NotificationBell from "@/components/NotificationBell";
+import { DashboardLayout } from "@/components/DashboardLayout";
 
 export default function ParentDashboard() {
   const { user } = useAuth();
@@ -93,7 +94,6 @@ export default function ParentDashboard() {
   return (
     <div className="min-h-screen bg-background">
       <CollegeHeader />
-
       <div className="container mx-auto px-4 py-8">
 
         {/* HEADER */}
@@ -117,7 +117,7 @@ export default function ParentDashboard() {
           </div>
 
           {/* 🔔 Notification Bell */}
-          <NotificationBell />
+          {/* <NotificationBell /> */}
         </motion.div>
 
 
