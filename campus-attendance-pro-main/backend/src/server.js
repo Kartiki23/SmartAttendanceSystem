@@ -106,7 +106,7 @@ app.use('/api/parents', require('./routes/parents'));
 app.use('/api/subjects', require('./routes/subjects'));
 app.use('/api/profile', require('./routes/profile'));
 app.use('/api/notification', require('./routes/notification'));
-
+app.use('/api/otp',require('./routes/otp'));
 // ==========================
 // ROOT ROUTE
 // ==========================

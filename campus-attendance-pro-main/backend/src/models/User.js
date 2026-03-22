@@ -38,6 +38,12 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    otp:{
+        type:String
+    },
+    otpExpire:{
+        type:Date
+    },
 });
 
 // Hash password before saving
